@@ -13,14 +13,13 @@ body {
   position: relative;
 }
 
-/* 背景のオーブをより濃く、はっきりと */
 body::before {
   content: "";
   position: fixed;
   top: 0; left: 0; width: 100%; height: 100%;
   background: 
-    radial-gradient(circle at 10% 10%, rgba(137, 196, 225, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 90% 90%, rgba(255, 245, 157, 0.4) 0%, transparent 50%);
+    radial-gradient(circle at 10% 10%, rgba(137, 196, 225, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(255, 245, 157, 0.15) 0%, transparent 40%);
   z-index: -1;
   pointer-events: none;
 }
@@ -32,20 +31,18 @@ body::before {
   box-sizing: border-box;
 }
 
-/* セクションの透明度を上げて、背景をより透かす */
 .module-wrapper {
   padding-block: var(--space-section);
-  background-color: rgba(255, 255, 255, 0.4); /* 透明度アップ */
+  background-color: rgba(255, 255, 255, 0.6); 
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.6);
+  border-bottom: 1px solid rgba(255,255,255,0.8);
 }
 
 .module-wrapper:nth-of-type(even) {
-  background-color: rgba(240, 248, 255, 0.4); /* 透明度アップ */
+  background-color: rgba(240, 248, 255, 0.6); 
 }
-
 .module-contact {
-  background: linear-gradient(135deg, rgba(137, 196, 225, 0.9), rgba(184, 228, 245, 0.9)) !important;
+  background: linear-gradient(135deg, var(--color-main), var(--color-main-light)) !important;
   color: #fff;
 }
 .module-contact .section__title { color: #fff; }
@@ -125,9 +122,9 @@ h1, h2, h3 {
 
 /* Header */
 .header {
-  background: rgba(255, 255, 255, 0.8);
+  background: #fff;
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -161,7 +158,7 @@ h1, h2, h3 {
   left: 0;
   width: 100%;
   height: calc(100vh - 80px);
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--color-surface);
   padding: var(--space-md);
   transform: translateX(100%);
   transition: transform 0.3s ease;
@@ -185,7 +182,7 @@ h1, h2, h3 {
     transform: none;
     height: auto;
     width: auto;
-    background: transparent;
+    background: #fff;
     padding: 0;
     overflow: visible;
   }
@@ -230,33 +227,42 @@ h1, h2, h3 {
 .hero__bg-image {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1576091160550-217358c7be61?auto=format&fit=crop&w=1920&q=80');
+  background-image: url('img/hero-bg.png'); /* いただいたパスを維持 */
   background-size: cover;
   background-position: center;
   z-index: 0;
+  /* 【修正】マスクを早めに、長くかけることで境目を消す */
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 }
 
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.3), rgba(255,255,255,0.1), rgba(0,0,0,0.4));
+  /* 【修正】文字を際立たせるため、オーバーレイを少し濃く、下部は透明に */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
   z-index: 1;
 }
+
+/* ...以降の .hero__inner などは変更なし... */
 
 .hero__inner {
   position: relative;
   z-index: 2;
   max-width: 900px;
   margin: 0 auto;
+  /* 【追加】テキスト全体に強い影をつけて可読性を確保 */
+  text-shadow: 0 4px 12px rgba(0,0,0,0.6);
 }
 
 .hero__title {
-  font-size: var(--font-2xl);
+  font-size: 30px;
   margin-bottom: var(--space-md);
   color: #fff;
   line-height: 1.4;
   font-weight: 800;
-  text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  /* タイトルはさらに強く */
+  text-shadow: 0 4px 16px rgba(0,0,0,0.8);
 }
 
 .hero__highlight {
@@ -264,13 +270,6 @@ h1, h2, h3 {
   border-bottom: 3px solid var(--color-accent);
 }
 
-.hero__text {
-  font-size: var(--font-lg);
-  margin-bottom: 0;
-  color: #fff;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-  font-weight: bold;
-}
 
 /* Appeal */
 .appeal__list {
@@ -611,8 +610,8 @@ h1, h2, h3 {
 
 /* ===== VARIANTS INTEGRATION ===== */
 
-/* Sim Income */
-.v-sim-income { background-color: rgba(240, 248, 255, 0.4); }
+/* Sim Income - 修正箇所 */
+.v-sim-income { background-color: rgba(240, 248, 255, 0.5); }
 .sim-income__calculator {
   background: #fff;
   padding: 40px;
@@ -677,15 +676,38 @@ input[type=range]::-webkit-slider-thumb {
   padding-bottom: 8px;
 }
 .sim-income__result-box:last-child { border-bottom: none; }
+
+/* 【修正】年収換算の強調ボックスを縦並びにする */
 .sim-income__result-box.highlight {
   background: #fff;
-  padding: 16px;
-  border-radius: 8px;
+  padding: 24px; /* 余白を広げる */
+  border-radius: 12px;
   border: 2px solid var(--color-main);
-  margin-top: 8px;
+  margin-top: 16px; /* 上との間隔を広げる */
+  /* Flexboxの方向を縦に変更し、中央揃えにする */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
 }
-.sim-income__result-value { font-size: 1.2rem; font-weight: 700; }
-.sim-income__result-box.highlight .sim-income__result-value { color: var(--color-main-dark); font-size: 1.8rem; }
+
+/* ラベルのスタイル調整 */
+.sim-income__result-box.highlight .sim-income__result-label {
+    font-size: 1rem;
+    margin-bottom: 8px; /* 値との間に余白を追加 */
+    color: var(--color-text-light);
+    font-weight: 700;
+}
+
+/* 値のスタイル調整 */
+.sim-income__result-box.highlight .sim-income__result-value {
+    color: var(--color-main-dark);
+    font-size: 2rem; /* 少し大きくして強調 */
+    font-weight: 800;
+    line-height: 1;
+}
 
 /* Job Spec */
 .jobSpec__card {
@@ -794,7 +816,7 @@ input[type=range]::-webkit-slider-thumb {
   border-bottom: 1px solid var(--color-border);
 }
 
-/* Floating CTA */
+/* Floating CTA (はみ出し修正) */
 .floating-cta {
   position: fixed !important;
   bottom: 0 !important;
