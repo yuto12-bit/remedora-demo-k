@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>ケアホームひまわり｜採用サイト</title>
+  <meta name="description" content="東大阪の介護施設「ケアホームひまわり」の採用情報。未経験歓迎、資格取得支援あり。残業ほぼなしのアットホームな職場です。" />
+
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="tokens.css" />
+  <link rel="stylesheet" href="layout.css" />
+  
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX'); 
+  </script>
+</head>
+
+<body data-page-id="demo_recruit_lp_care">
+
+<header class="header">
+  <div class="container header__inner">
+    <a href="#" class="header__logo">ケアホームひまわり</a>
+    <button class="header__toggle" aria-expanded="false" data-event="menu_toggle">≡</button>
+
+    <nav class="header__nav" id="global-nav">
+      <ul class="nav__list">
+        <li><a href="#appeal" data-event="nav_appeal">魅力</a></li>
+        <li><a href="#v-sim-income" data-event="nav_sim">給与計算</a></li>
+        <li><a href="#job-spec" data-event="nav_job">募集要項</a></li>
+        <li><a href="#apply-flow" data-event="nav_flow">流れ</a></li>
+        <li><a href="#contact" data-event="nav_contact">ご応募</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero module-wrapper">
+   <div class="hero__bg" style="background-color: #fcefe3;"></div>
+  <div class="container hero__inner">
+    <h1 class="hero__title">
+      【 東大阪 】あなたの優しさが、<br>
+      誰かの「生きる力」になる。
+    </h1>
+    <p class="hero__text">未経験・ブランクOK。資格取得全額支援。<br>「ありがとう」が飛び交う職場で働きませんか？</p>
+
+    <div class="hero__cta">
+      <a href="#contact" class="btn btn--main" data-event="cta_hero_apply">まずは見学・面談に申し込む</a>
+      <a href="tel:06-1234-5678" class="btn btn--sub" data-event="cta_hero_tel">
+        電話で質問（06-1234-5678）
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta cta--top module-wrapper">
+  <div class="container cta__inner">
+    <p class="cta__headline">【 2月入社：残り採用枠 <strong>2名</strong> です 】</p>
+    <div class="cta__buttons">
+      <a href="#contact" class="btn btn--main" data-event="cta_top_apply">かんたん1分で応募する</a>
+    </div>
+  </div>
+</section>
+
+<section id="appeal" class="module-wrapper">
+  <div class="container section__inner">
+    <h2 class="section__title">ひまわりが選ばれる理由</h2>
+    <div class="strong__list">
+      <div class="strong__item">
+        <h3 class="strong__title">残業ほぼゼロ</h3>
+        <p class="strong__text">DX導入で記録業務を効率化。定時で帰れる体制を整えています。</p>
+      </div>
+      <div class="strong__item">
+        <h3 class="strong__title">資格取得を全額支援</h3>
+        <p class="strong__text">初任者研修から介護福祉士まで、働きながらスキルアップできます。</p>
+      </div>
+      <div class="strong__item">
+        <h3 class="strong__title">人間関係がフラット</h3>
+        <p class="strong__text">20代〜60代まで活躍中。職種の垣根を超えて助け合う風土です。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="v-sim-income" class="v-sim-income sim-income module-wrapper" data-component="sim-income" data-section="sim-income">
+  <div class="container sim-income__inner">
+    <h2 class="section__title">月収・年収シミュレーション</h2>
+    <p class="sim-income__lead">
+      あなたの働き方に合わせた収入の目安を計算できます。<br>
+      スライダーを動かしてご確認ください。
+    </p>
+
+    <div class="sim-income__calculator">
+      <div class="sim-income__inputs">
+        <div class="sim-income__group">
+          <label for="v-sim-income--daily-wage">
+            時給
+            <span class="sim-income__value-display"><span data-role="display-daily">1,200</span>円</span>
+          </label>
+          <input type="range" id="v-sim-income--daily-wage" data-role="daily-wage" min="1100" max="1800" step="50" value="1200">
+          <div class="sim-income__range-labels">
+            <span>1,100</span>
+            <span>1,800</span>
+          </div>
+        </div>
+
+        <div class="sim-income__group">
+          <label for="v-sim-income--weekly-days">
+            週の出勤日数
+            <span class="sim-income__value-display"><span data-role="display-weekly">3</span>日</span>
+          </label>
+          <input type="range" id="v-sim-income--weekly-days" data-role="weekly-days" min="1" max="5" step="1" value="3">
+          <div class="sim-income__range-labels">
+            <span>週1</span>
+            <span>週5</span>
+          </div>
+        </div>
+
+        <input type="hidden" data-role="transport" value="0">
+         <span data-role="display-transport" style="display:none;"></span>
+      </div>
+
+      <div class="sim-income__results">
+        <div class="sim-income__result-box">
+          <span class="sim-income__result-label">月収目安</span>
+          <div class="sim-income__result-value">
+            <span data-role="result-monthly">0</span><span class="unit">円</span>
+          </div>
+        </div>
+        <div class="sim-income__result-box highlight">
+          <span class="sim-income__result-label">年収換算</span>
+          <div class="sim-income__result-value">
+            <span data-role="result-yearly">0</span><span class="unit">円</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="sim-income__note">
+      ※上記は目安であり、夜勤手当・処遇改善手当等は別途支給されます。<br>
+      ※詳細は面談にてご説明いたします。
+    </p>
+  </div>
+</section>
+
+<section class="module-wrapper">
+  <div class="container section__inner">
+    <h2 class="section__title">職場の雰囲気</h2>
+    <div class="works__list">
+      <article class="work-card">
+        <div style="background:#ddd; height:200px; display:flex; align-items:center; justify-content:center; border-radius:8px;">
+            <span style="color:#888;">[画像: レク風景]</span>
+        </div>
+        <h3 class="work-card__title">笑顔あふれるレク</h3>
+      </article>
+      <article class="work-card">
+        <div style="background:#ddd; height:200px; display:flex; align-items:center; justify-content:center; border-radius:8px;">
+            <span style="color:#888;">[画像: ミーティング]</span>
+        </div>
+        <h3 class="work-card__title">風通しの良い会議</h3>
+      </article>
+      <article class="work-card">
+        <div style="background:#ddd; height:200px; display:flex; align-items:center; justify-content:center; border-radius:8px;">
+             <span style="color:#888;">[画像: 休憩室]</span>
+        </div>
+        <h3 class="work-card__title">綺麗な休憩室完備</h3>
+      </article>
+      <article class="work-card">
+        <div style="background:#ddd; height:200px; display:flex; align-items:center; justify-content:center; border-radius:8px;">
+             <span style="color:#888;">[画像: 食堂]</span>
+        </div>
+        <h3 class="work-card__title">明るい食堂</h3>
+      </article>
+      <article class="work-card">
+        <div style="background:#ddd; height:200px; display:flex; align-items:center; justify-content:center; border-radius:8px;">
+             <span style="color:#888;">[画像: スタッフ]</span>
+        </div>
+        <h3 class="work-card__title">スタッフの様子</h3>
+      </article>
+      <article class="work-card">
+        <div style="background:#ddd; height:200px; display:flex; align-items:center; justify-content:center; border-radius:8px;">
+             <span style="color:#888;">[画像: 外観]</span>
+        </div>
+        <h3 class="work-card__title">施設の外観</h3>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="jobSpec module-wrapper" id="job-spec" aria-labelledby="job-spec-title">
+  <div class="container jobSpec__inner">
+    <header class="jobSpec__header">
+      <h2 class="section__title" id="job-spec-title">募集要項</h2>
+      <p class="jobSpec__lead">正社員・パート同時募集中。</p>
+    </header>
+
+    <div class="jobSpec__card" data-accordion-root>
+      <dl class="jobSpec__dl">
+        <div class="jobSpec__row">
+          <dt class="jobSpec__dt">募集職種</dt>
+          <dd class="jobSpec__dd">介護職員（ヘルパー）</dd>
+        </div>
+        <div class="jobSpec__row">
+          <dt class="jobSpec__dt">雇用形態</dt>
+          <dd class="jobSpec__dd">正社員 / パート</dd>
+        </div>
+        <div class="jobSpec__row">
+          <dt class="jobSpec__dt">給与</dt>
+          <dd class="jobSpec__dd">
+            【正社員】月給 230,000円 〜<br>
+            【パート】時給 1,200円 〜
+          </dd>
+        </div>
+        <div class="jobSpec__row">
+          <dt class="jobSpec__dt">勤務時間</dt>
+          <dd class="jobSpec__dd">
+            早番 07:00〜16:00<br>
+            日勤 09:00〜18:00<br>
+            遅番 11:00〜20:00<br>
+            ※シフト制（実働8時間）
+          </dd>
+        </div>
+      </dl>
+
+      <div class="jobSpec__divider"></div>
+
+      <button class="jobSpec__toggle" type="button" data-accordion-toggle aria-expanded="false">
+        条件の詳細（福利厚生・手当・試用期間）を開く
+      </button>
+
+      <div class="jobSpec__details" data-accordion-panel hidden>
+        <dl class="jobSpec__dl jobSpec__dl--details">
+          <div class="jobSpec__row">
+            <dt class="jobSpec__dt">福利厚生</dt>
+            <dd class="jobSpec__dd">社会保険完備、交通費全額支給、制服貸与、資格取得支援制度</dd>
+          </div>
+          <div class="jobSpec__row">
+            <dt class="jobSpec__dt">諸手当</dt>
+            <dd class="jobSpec__dd">夜勤手当（1回6,000円）、資格手当、処遇改善手当</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="applyFlow module-wrapper" id="apply-flow" aria-labelledby="apply-flow-title">
+  <div class="container applyFlow__inner">
+    <header class="applyFlow__header">
+      <h2 class="section__title" id="apply-flow-title">選考の流れ</h2>
+    </header>
+
+    <ol class="applyFlow__steps">
+      <li class="applyFlow__step">
+        <span class="applyFlow__num">1</span>
+        <div class="applyFlow__body">
+          <p class="applyFlow__text">Webフォームまたは電話で応募</p>
+        </div>
+      </li>
+      <li class="applyFlow__step">
+        <span class="applyFlow__num">2</span>
+        <div class="applyFlow__body">
+          <p class="applyFlow__text">
+            担当者より【電話】でご連絡し、面接日時を調整します
+          </p>
+        </div>
+      </li>
+      <li class="applyFlow__step">
+        <span class="applyFlow__num">3</span>
+        <div class="applyFlow__body">
+          <p class="applyFlow__text">面接・見学（1回）</p>
+        </div>
+      </li>
+      <li class="applyFlow__step">
+        <span class="applyFlow__num">4</span>
+        <div class="applyFlow__body">
+          <p class="applyFlow__text">採用（内定）</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="faq" class="module-wrapper">
+  <div class="container section__inner">
+    <h2 class="section__title">よくある質問</h2>
+    <div class="faq__list">
+      <div class="faq__item">
+        <div class="faq__q" role="button" aria-expanded="false" data-event="faq_open">
+          資格を持っていないのですが、応募できますか？
+        </div>
+        <div class="faq__a">はい、大歓迎です！</div>
+      </div>
+      <div class="faq__item">
+        <div class="faq__q" role="button" aria-expanded="false" data-event="faq_open">
+          子供が小さいのですが、シフトの相談は可能ですか？
+        </div>
+        <div class="faq__a">可能です。急な発熱などにも柔軟に対応し合っています。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="access" class="module-wrapper">
+  <div class="container section__inner">
+    <h2 class="section__title">アクセス</h2>
+    <div class="access__map">
+      <iframe src="https://maps.google.com/maps?q=Osaka&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="400" style="border:0; filter:grayscale(20%); border-radius:8px;" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="module-contact module-wrapper">
+  <div class="container section__inner">
+    <h2 class="section__title">応募フォーム</h2>
+    <p class="contact__note">面接・見学のご希望もこちらから。入力は1分で完了します。</p>
+
+    <div class="contact__form-wrapper">
+      <form id="contactForm" class="form">
+        <input type="text" name="honeypot" style="display:none;" tabindex="-1" autocomplete="off">
+        
+        <div class="form__group">
+          <label for="name" class="form__label">お名前 <span class="form__required">必須</span></label>
+          <input type="text" name="name" id="name" class="form__input" placeholder="例：山田 太郎" required>
+        </div>
+
+        <div class="form__group">
+          <label for="tel" class="form__label">電話番号 <span class="form__required">必須</span></label>
+          <input type="tel" name="phone" id="tel" class="form__input" placeholder="例：090-1234-5678" required>
+        </div>
+
+        <div class="form__group">
+          <label for="email" class="form__label">メールアドレス <span class="form__required">必須</span></label>
+          <input type="email" name="email" id="email" class="form__input" placeholder="例：info@example.com" required>
+        </div>
+
+        <div class="form__group">
+          <label for="message" class="form__label">ご質問・希望連絡時間帯</label>
+          <textarea name="message" id="message" class="form__textarea" rows="5" placeholder="ご質問などあればご記入ください。"></textarea>
+        </div>
+
+        <div style="margin: 2rem 0; text-align: center;">
+            <label style="cursor: pointer; display: inline-flex; align-items: center; gap: 0.5rem;">
+                <input type="checkbox" name="privacy_agreement" required style="transform: scale(1.2); cursor: pointer;">
+                <span style="font-size: 0.9rem;">
+                    <a href="#" style="text-decoration: underline; color: inherit;">プライバシーポリシー</a>
+                    に同意して送信する
+                </span>
+            </label>
+        </div>
+
+        <div class="form__submit">
+          <button type="submit" class="btn btn--main btn--submit" data-event="submit_form">応募する</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="cta cta--bottom module-wrapper">
+  <div class="container cta__inner">
+    <div class="cta__buttons">
+      <a href="#contact" class="btn btn--main" data-event="cta_bottom_apply">今すぐ応募する</a>
+      <a href="tel:06-1234-5678" class="btn btn--sub" data-event="cta_bottom_tel">電話で相談する</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <p class="footer__logo">ケアホームひまわり</p>
+    <p class="footer__copy">
+      〒577-0000 大阪府東大阪市XXX-X<br>
+      <a href="#" class="footer__policy">プライバシーポリシー</a>
+    </p>
+  </div>
+</footer>
+
+<div class="floating-cta">
+  <a href="tel:06-1234-5678" class="floating-cta__item floating-cta__item--tel" data-event="floating_tel">
+    電話応募
+  </a>
+  <a href="#contact" class="floating-cta__item floating-cta__item--reserve" data-event="floating_reserve">
+    <span>Webから応募</span>
+  </a>
+</div>
+
+<script src="script.base.js"></script>
+
+<!-- VARIANTS:START -->
+<!-- VARIANTS:END -->
+</body>
+</html>

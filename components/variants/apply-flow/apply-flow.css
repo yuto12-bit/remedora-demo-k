@@ -1,0 +1,106 @@
+.applyFlow {
+  padding: var(--space-section, 72px) 0;
+}
+
+.applyFlow__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 var(--space-md, 24px);
+}
+
+.applyFlow__header {
+  margin-bottom: var(--space-md, 24px);
+}
+
+.applyFlow__title {
+  margin: 0;
+  font-size: var(--font-xl, 28px);
+  line-height: 1.2;
+}
+
+.applyFlow__lead {
+  margin: var(--space-sm, 16px) 0 0;
+  color: var(--color-muted, #666);
+  line-height: 1.7;
+}
+
+.applyFlow__steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-sm, 16px);
+}
+
+.applyFlow__step {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: var(--space-sm, 16px);
+  align-items: start;
+  padding: var(--space-md, 24px);
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  border-radius: var(--radius, 8px);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.applyFlow__num {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.12);
+  font-weight: 900;
+}
+
+.applyFlow__text {
+  margin: 0;
+  line-height: 1.8;
+}
+
+.applyFlow__card {
+  margin-top: var(--space-md, 24px);
+  padding: var(--space-md, 24px);
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  border-radius: var(--radius, 8px);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.applyFlow__sub {
+  margin: 0 0 var(--space-sm, 16px);
+  font-size: 1.05em;
+}
+
+.applyFlow__list {
+  margin: 0;
+  padding-left: 1.2em;
+  line-height: 1.9;
+}
+
+.applyFlow__actions {
+  margin-top: var(--space-md, 24px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm, 16px);
+}
+
+.applyFlow__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: var(--radius, 8px);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.applyFlow__btn--secondary {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+@media (max-width: 768px) {
+  .applyFlow__step {
+    padding: var(--space-sm, 16px);
+  }
+}
