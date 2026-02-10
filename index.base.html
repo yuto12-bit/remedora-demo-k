@@ -28,7 +28,7 @@
     <nav class="header__nav" id="global-nav">
       <ul class="nav__list">
         <li><a href="#appeal" data-event="nav_appeal">魅力</a></li>
-        <li><a href="#v-sim-income" data-event="nav_sim">給与計算</a></li>
+        <li><a href="#interview" data-event="nav_interview">先輩の声</a></li>
         <li><a href="#job-spec" data-event="nav_job">募集要項</a></li>
         <li><a href="#apply-flow" data-event="nav_flow">流れ</a></li>
         <li><a href="#contact" data-event="nav_contact">ご応募</a></li>
@@ -39,30 +39,18 @@
 
 <main id="main">
 
-<section class="hero module-wrapper">
-   <div class="hero__bg" style="background-color: #fcefe3;"></div>
+<section class="hero">
+   <div class="hero__bg-image"></div>
+   <div class="hero__overlay"></div>
   <div class="container hero__inner">
     <h1 class="hero__title">
-      【 東大阪 】あなたの優しさが、<br>
-      誰かの「生きる力」になる。
+      あなたの優しさが、<br>
+      誰かの<span class="hero__highlight">「生きる力」</span>になる。
     </h1>
-    <p class="hero__text">未経験・ブランクOK。資格取得全額支援。<br>「ありがとう」が飛び交う職場で働きませんか？</p>
-
-    <div class="hero__cta">
-      <a href="#contact" class="btn btn--main" data-event="cta_hero_apply">まずは見学・面談に申し込む</a>
-      <a href="tel:06-1234-5678" class="btn btn--sub" data-event="cta_hero_tel">
-        電話で質問（06-1234-5678）
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="cta cta--top module-wrapper">
-  <div class="container cta__inner">
-    <p class="cta__headline">【 2月入社：残り採用枠 <strong>2名</strong> です 】</p>
-    <div class="cta__buttons">
-      <a href="#contact" class="btn btn--main" data-event="cta_top_apply">かんたん1分で応募する</a>
-    </div>
+    <p class="hero__text">
+      未経験・ブランクOK。資格取得全額支援。<br>
+      「ありがとう」が飛び交う職場で働きませんか？
+    </p>
   </div>
 </section>
 
@@ -149,42 +137,111 @@
 
 <section class="module-wrapper">
   <div class="container section__inner">
+    <h2 class="section__title">1日の流れ（日勤例）</h2>
+    <div class="applyFlow__steps" style="max-width:800px;">
+      <div class="applyFlow__step">
+        <div class="applyFlow__num">09:00</div>
+        <div class="applyFlow__body">
+          <p class="applyFlow__text"><strong>出勤・申し送り</strong><br>夜勤スタッフから利用者様の体調変化などを共有します。</p>
+        </div>
+      </div>
+      <div class="applyFlow__step">
+        <div class="applyFlow__num">10:00</div>
+        <div class="applyFlow__body">
+          <p class="applyFlow__text"><strong>入浴・排泄介助</strong><br>お一人おひとりのペースに合わせてサポートします。</p>
+        </div>
+      </div>
+      <div class="applyFlow__step">
+        <div class="applyFlow__num">12:00</div>
+        <div class="applyFlow__body">
+          <p class="applyFlow__text"><strong>昼食・休憩</strong><br>食事の見守り後、スタッフも交代で休憩をとります。</p>
+        </div>
+      </div>
+      <div class="applyFlow__step">
+        <div class="applyFlow__num">14:00</div>
+        <div class="applyFlow__body">
+          <p class="applyFlow__text"><strong>レクリエーション</strong><br>体操やゲームなど、利用者様と一緒に楽しみます。</p>
+        </div>
+      </div>
+      <div class="applyFlow__step">
+        <div class="applyFlow__num">18:00</div>
+        <div class="applyFlow__body">
+          <p class="applyFlow__text"><strong>記録作成・退勤</strong><br>タブレットで簡単に記録を入力し、定時で退勤します。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="interview" class="module-wrapper">
+  <div class="container section__inner">
+    <h2 class="section__title">働く仲間の声</h2>
+    <div class="interview__list">
+      <article class="interview-card">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80" alt="先輩職員A" class="interview-card__img" loading="lazy">
+        <div class="interview-card__body">
+          <span class="interview-card__role">入社2年目 / 未経験</span>
+          <span class="interview-card__name">佐藤 彩花 (24)</span>
+          <p class="interview-card__catch">「知識ゼロからのスタート。先輩の優しさに救われました」</p>
+          <p class="interview-card__text">
+            最初は不安だらけでしたが、メンター制度のおかげで安心して覚えられました。利用者様の笑顔が毎日のやりがいです。
+          </p>
+        </div>
+      </article>
+
+      <article class="interview-card">
+        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=400&q=80" alt="先輩職員B" class="interview-card__img" loading="lazy">
+        <div class="interview-card__body">
+          <span class="interview-card__role">入社5年目 / リーダー</span>
+          <span class="interview-card__name">鈴木 健太 (32)</span>
+          <p class="interview-card__catch">「キャリアアップを本気で応援してくれる環境です」</p>
+          <p class="interview-card__text">
+            働きながら介護福祉士の資格を取得しました。費用は全額会社負担。今はフロアリーダーとしてチームをまとめています。
+          </p>
+        </div>
+      </article>
+
+      <article class="interview-card">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="先輩職員C" class="interview-card__img" loading="lazy">
+        <div class="interview-card__body">
+          <span class="interview-card__role">入社10年目 / 復職</span>
+          <span class="interview-card__name">田中 美咲 (45)</span>
+          <p class="interview-card__catch">「子育てと仕事の両立。ここなら無理なく続けられます」</p>
+          <p class="interview-card__text">
+            産休・育休を経て復帰しました。急な子供の発熱でも「お互い様」と協力し合える風土が本当にありがたいです。
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="module-wrapper">
+  <div class="container section__inner">
     <h2 class="section__title">職場の雰囲気</h2>
     <div class="works__list">
       <article class="work-card">
-        <div style="background:#ddd; height:200px; display:flex; align-items:center; justify-content:center; border-radius:8px;">
-            <span style="color:#888;">[画像: レク風景]</span>
-        </div>
+        <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=400&q=80" alt="レク風景" loading="lazy">
         <h3 class="work-card__title">笑顔あふれるレク</h3>
       </article>
       <article class="work-card">
-        <div style="background:#ddd; height:200px; display:flex; align-items:center; justify-content:center; border-radius:8px;">
-            <span style="color:#888;">[画像: ミーティング]</span>
-        </div>
+        <img src="https://images.unsplash.com/photo-1531497865144-82f4f6a2075e?auto=format&fit=crop&w=400&q=80" alt="ミーティング" loading="lazy">
         <h3 class="work-card__title">風通しの良い会議</h3>
       </article>
       <article class="work-card">
-        <div style="background:#ddd; height:200px; display:flex; align-items:center; justify-content:center; border-radius:8px;">
-             <span style="color:#888;">[画像: 休憩室]</span>
-        </div>
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=400&q=80" alt="休憩室" loading="lazy">
         <h3 class="work-card__title">綺麗な休憩室完備</h3>
       </article>
       <article class="work-card">
-        <div style="background:#ddd; height:200px; display:flex; align-items:center; justify-content:center; border-radius:8px;">
-             <span style="color:#888;">[画像: 食堂]</span>
-        </div>
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=80" alt="食堂" loading="lazy">
         <h3 class="work-card__title">明るい食堂</h3>
       </article>
       <article class="work-card">
-        <div style="background:#ddd; height:200px; display:flex; align-items:center; justify-content:center; border-radius:8px;">
-             <span style="color:#888;">[画像: スタッフ]</span>
-        </div>
+        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80" alt="スタッフ" loading="lazy">
         <h3 class="work-card__title">スタッフの様子</h3>
       </article>
       <article class="work-card">
-        <div style="background:#ddd; height:200px; display:flex; align-items:center; justify-content:center; border-radius:8px;">
-             <span style="color:#888;">[画像: 外観]</span>
-        </div>
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&q=80" alt="外観" loading="lazy">
         <h3 class="work-card__title">施設の外観</h3>
       </article>
     </div>
@@ -309,7 +366,7 @@
   <div class="container section__inner">
     <h2 class="section__title">アクセス</h2>
     <div class="access__map">
-      <iframe src="https://maps.google.com/maps?q=Osaka&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="400" style="border:0; filter:grayscale(20%); border-radius:8px;" allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://maps.google.com/maps?q=Osaka&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="400" style="border:0;" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </section>
@@ -361,11 +418,31 @@
   </div>
 </section>
 
-<section class="cta cta--bottom module-wrapper">
-  <div class="container cta__inner">
-    <div class="cta__buttons">
-      <a href="#contact" class="btn btn--main" data-event="cta_bottom_apply">今すぐ応募する</a>
-      <a href="tel:06-1234-5678" class="btn btn--sub" data-event="cta_bottom_tel">電話で相談する</a>
+<section id="sns-links" class="module-wrapper">
+  <div class="container section__inner">
+    <h2 class="section__title">SNS・関連サイト</h2>
+    <div class="sns__list">
+      <a href="#" class="sns__item" target="_blank">
+        <div class="sns__icon" style="background:#E1306C; color:#fff;">📷</div>
+        <div class="sns__info">
+          <p class="sns__name">公式Instagram</p>
+          <p class="sns__desc">職場の日常を発信中</p>
+        </div>
+      </a>
+      <a href="#" class="sns__item" target="_blank">
+        <div class="sns__icon" style="background:#06C755; color:#fff;">💬</div>
+        <div class="sns__info">
+          <p class="sns__name">公式LINE</p>
+          <p class="sns__desc">お気軽にご相談ください</p>
+        </div>
+      </a>
+      <a href="#" class="sns__item" target="_blank">
+        <div class="sns__icon" style="background:#003366; color:#fff;">📄</div>
+        <div class="sns__info">
+          <p class="sns__name">採用特設サイト</p>
+          <p class="sns__desc">Airワークで詳細を見る</p>
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -394,6 +471,10 @@
 <script src="script.base.js"></script>
 
 <!-- VARIANTS:START -->
+
+
+
 <!-- VARIANTS:END -->
+
 </body>
 </html>

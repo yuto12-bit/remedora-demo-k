@@ -45,64 +45,56 @@ const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 })();
 
 // ==============================
-// GA4 Event Tracking
+// Scroll Animation
 // ==============================
 (() => {
-  const PAGE_ID = document.body?.dataset?.pageId || "unknown_lp";
+  const targets = $$(".module-wrapper");
+  if (!targets.length) return;
 
-  const track = (name, params = {}) => {
-    if (typeof gtag !== "function") return;
-    gtag("event", name, {
-      page_id: PAGE_ID,
-      ...params,
-    });
-  };
+  targets.forEach(el => el.classList.add("fade-in-up"));
 
-  document.addEventListener("click", (e) => {
-    const el = e.target.closest("a, button");
-    if (!el) return;
-
-    const href = el.getAttribute("href") || "";
-    const label = el.textContent.trim().slice(0, 30);
-    const eventName = el.dataset.event; 
-
-    if (eventName) {
-      track(eventName, { event_label: label });
-      if (eventName.includes("cta") || eventName.includes("submit")) {
-         track("apply_click", { event_label: label, link_url: href });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
       }
-    }
-
-    if (href.startsWith("tel:")) {
-      track("click_tel", { event_label: href.replace("tel:", "") });
-    }
-    if (/line\.me|lin\.ee/i.test(href)) {
-      track("click_line", { event_label: label });
-    }
+    });
+  }, {
+    rootMargin: "0px 0px -100px 0px"
   });
+
+  targets.forEach(el => observer.observe(el));
 })();
 
 // ==============================
-// Pseudo Form Submit
+// GA4 & Form Logic
 // ==============================
+const GA_MEASUREMENT_ID = "G-XXXXXXXXXX"; 
+
+const track = (name, params = {}) => {
+  if (typeof gtag !== "function") return;
+  gtag("event", name, { ...params });
+};
+
+document.addEventListener("click", (e) => {
+  const el = e.target.closest("a, button");
+  if (!el) return;
+  const eventName = el.dataset.event; 
+  if (eventName) track(eventName);
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
   if (!form) return;
-
   const submitBtn = form.querySelector('button[type="submit"]');
 
   form.addEventListener("submit", (e) => {
     e.preventDefault(); 
-
     const requiredInputs = form.querySelectorAll("[required]");
     let hasError = false;
     requiredInputs.forEach((input) => {
-      if (!input.value.trim() || (input.type === "checkbox" && !input.checked)) {
-        hasError = true;
-        input.style.borderColor = "red";
-      } else {
-        input.style.borderColor = "";
-      }
+      if (!input.value.trim() || (input.type === "checkbox" && !input.checked)) hasError = true;
     });
 
     if (hasError) {
@@ -122,44 +114,26 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // =========================================
-// Variants Logic (Integrated)
+// Variants Logic
 // =========================================
 
-/* --- sim-income.js --- */
+/* Sim Income */
 (() => {
-  const fmt = (n) => {
-    const num = Number(n);
-    if (!Number.isFinite(num)) return "0";
-    return num.toLocaleString("ja-JP");
-  };
-
+  const fmt = (n) => Number(n).toLocaleString("ja-JP");
   const calc = (root) => {
     const dailyWageEl = root.querySelector('[data-role="daily-wage"]');
     const weeklyDaysEl = root.querySelector('[data-role="weekly-days"]');
-    const transportEl = root.querySelector('[data-role="transport"]');
+    if (!dailyWageEl || !weeklyDaysEl) return;
 
-    const dailyOut = root.querySelector('[data-role="display-daily"]');
-    const weeklyOut = root.querySelector('[data-role="display-weekly"]');
-    const transportOut = root.querySelector('[data-role="display-transport"]');
+    const daily = Number(dailyWageEl.value);
+    const weekly = Number(weeklyDaysEl.value);
+    const monthly = daily * weekly * 4;
+    const yearly = monthly * 12;
 
-    const monthlyOut = root.querySelector('[data-role="result-monthly"]');
-    const yearlyOut = root.querySelector('[data-role="result-yearly"]');
-
-    if (!dailyWageEl || !weeklyDaysEl || !transportEl || !dailyOut || !weeklyOut || !transportOut || !monthlyOut || !yearlyOut) return;
-
-    const daily = Number(dailyWageEl.value || 0);
-    const weekly = Number(weeklyDaysEl.value || 0);
-    const transport = Number(transportEl.value || 0);
-
-    const monthly = Math.max(0, daily * weekly * 4 + transport);
-    const yearly = Math.max(0, monthly * 12);
-
-    dailyOut.textContent = fmt(daily);
-    weeklyOut.textContent = fmt(weekly);
-    transportOut.textContent = fmt(transport);
-
-    monthlyOut.textContent = fmt(monthly);
-    yearlyOut.textContent = fmt(yearly);
+    root.querySelector('[data-role="display-daily"]').textContent = fmt(daily);
+    root.querySelector('[data-role="display-weekly"]').textContent = fmt(weekly);
+    root.querySelector('[data-role="result-monthly"]').textContent = fmt(monthly);
+    root.querySelector('[data-role="result-yearly"]').textContent = fmt(yearly);
   };
 
   const bind = (root) => {
@@ -168,40 +142,25 @@ document.addEventListener("DOMContentLoaded", () => {
       el.addEventListener('input', () => calc(root));
     });
   };
-
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-component="sim-income"]').forEach(bind);
   });
 })();
 
-
-/* --- job-spec.js --- */
+/* Job Spec */
 (function () {
   const roots = document.querySelectorAll("[data-accordion-root]");
-  if (!roots.length) return;
-
   roots.forEach((root) => {
     const btn = root.querySelector("[data-accordion-toggle]");
     const panel = root.querySelector("[data-accordion-panel]");
     if (!btn || !panel) return;
-
-    const open = () => {
-      btn.setAttribute("aria-expanded", "true");
-      panel.hidden = false;
-      btn.textContent = "条件の詳細（福利厚生・手当・試用期間）を閉じる";
-    };
-
-    const close = () => {
-      btn.setAttribute("aria-expanded", "false");
-      panel.hidden = true;
-      btn.textContent = "条件の詳細（福利厚生・手当・試用期間）を開く";
-    };
-
-    close();
-
+    
+    panel.hidden = true;
     btn.addEventListener("click", () => {
-      const expanded = btn.getAttribute("aria-expanded") === "true";
-      expanded ? close() : open();
+      const isOpen = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", !isOpen);
+      panel.hidden = isOpen;
+      btn.textContent = isOpen ? "条件の詳細を開く" : "条件の詳細を閉じる";
     });
   });
 })();
