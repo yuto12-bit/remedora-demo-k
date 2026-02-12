@@ -84,17 +84,27 @@ document.addEventListener("click", (e) => {
   if (eventName) track(eventName);
 });
 
+// ==============================
+// Pseudo Form Submit (Updated for Tour Request)
+// ==============================
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contactForm");
   if (!form) return;
+
   const submitBtn = form.querySelector('button[type="submit"]');
 
   form.addEventListener("submit", (e) => {
     e.preventDefault(); 
+
     const requiredInputs = form.querySelectorAll("[required]");
     let hasError = false;
     requiredInputs.forEach((input) => {
-      if (!input.value.trim() || (input.type === "checkbox" && !input.checked)) hasError = true;
+      if (!input.value.trim() || (input.type === "checkbox" && !input.checked)) {
+        hasError = true;
+        input.style.borderColor = "red";
+      } else {
+        input.style.borderColor = "";
+      }
     });
 
     if (hasError) {
@@ -107,6 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
       submitBtn.textContent = "送信中...";
     }
 
+    // 実際の運用ではここでGAS等へ送信
+    // デモなので即thanksへ
     setTimeout(() => {
       window.location.href = "thanks.html"; 
     }, 1500);
