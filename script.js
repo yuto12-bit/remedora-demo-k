@@ -176,3 +176,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 })();
+
+// ==============================
+// Page Fade In (Initial Load)
+// ==============================
+window.addEventListener("load", () => {
+  // 画像などのリソースを含めて読み込みが完了したらフェードイン
+  document.body.classList.add("is-loaded");
+});
+
+// 万が一読み込みが遅すぎた場合の保険（3秒後に強制表示）
+setTimeout(() => {
+  document.body.classList.add("is-loaded");
+}, 3000);
